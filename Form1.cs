@@ -116,6 +116,7 @@ namespace QLNhaHangALaViet
 
         private void btnDSmatHang_Click_1(object sender, EventArgs e)
         {
+            openChildForm(new frmDsmathang(this));
             hideSubMenu();
         }
         private void bunifuButton10_Click(object sender, EventArgs e)
@@ -171,7 +172,9 @@ namespace QLNhaHangALaViet
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+         
             
+
         }
 
        

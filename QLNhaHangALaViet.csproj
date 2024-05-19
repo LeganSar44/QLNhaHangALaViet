@@ -43,6 +43,15 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
     </Reference>
@@ -76,6 +85,12 @@
     <Compile Include="frmDsmathang.Designer.cs">
       <DependentUpon>frmDsmathang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThemMatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemMatHang.Designer.cs">
+      <DependentUpon>frmThemMatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThemMoiNv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDsmathang.resx">
       <DependentUpon>frmDsmathang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemMatHang.resx">
+      <DependentUpon>frmThemMatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemMoiNv.resx">
       <DependentUpon>frmThemMoiNv.cs</DependentUpon>
@@ -197,6 +215,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-import-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

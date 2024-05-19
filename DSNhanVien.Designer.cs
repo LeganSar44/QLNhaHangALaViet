@@ -143,7 +143,7 @@
             this.datagridviewDSnv.EnableHeadersVisualStyles = false;
             this.datagridviewDSnv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
             this.datagridviewDSnv.HeaderBackColor = System.Drawing.Color.ForestGreen;
-            this.datagridviewDSnv.HeaderBgColor = System.Drawing.Color.Empty;
+            this.datagridviewDSnv.HeaderBackColor = System.Drawing.Color.Empty;
             this.datagridviewDSnv.HeaderForeColor = System.Drawing.Color.White;
             this.datagridviewDSnv.Location = new System.Drawing.Point(0, 0);
             this.datagridviewDSnv.Name = "datagridviewDSnv";

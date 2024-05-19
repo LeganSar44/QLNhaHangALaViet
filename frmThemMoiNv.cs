@@ -73,7 +73,7 @@ namespace QLNhaHangALaViet
                         command.ExecuteNonQuery();
                         snackbarMatKhauKhongKhop.Show(this,"Thêm nhân viên mới thành công!",Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,1000,"",Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter );
                         frmDsNhanVienInstance.LoadData();
-                        this.Close();
+                      //  this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -102,6 +102,11 @@ namespace QLNhaHangALaViet
             txtMatKhauDangNhap.Text = "";
             txtXacNhanMk.Text = "";
             txtHoTenNv.Focus();
+        }
+
+        private void txtHoTenNv_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
