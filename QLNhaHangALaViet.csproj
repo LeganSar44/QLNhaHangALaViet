@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,8 +35,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fooddome_118034.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
@@ -43,11 +52,23 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
+      <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
@@ -58,10 +79,78 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.1.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.Core.2.1.7\lib\net48\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WinForms.2.1.7\lib\net48\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WinPresentation.2.1.7\lib\net48\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,11 +168,77 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoCaoDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoDT.Designer.cs">
+      <DependentUpon>frmBaoCaoDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmbaocaoMathang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbaocaoMathang.Designer.cs">
+      <DependentUpon>frmbaocaoMathang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChitiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChitiet.Designer.cs">
+      <DependentUpon>frmChitiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonBan.Designer.cs">
+      <DependentUpon>frmChonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatBan.Designer.cs">
+      <DependentUpon>frmDatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDshoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDshoadon.Designer.cs">
+      <DependentUpon>frmDshoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDsmathang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDsmathang.Designer.cs">
       <DependentUpon>frmDsmathang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLienHe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLienHe.Designer.cs">
+      <DependentUpon>frmLienHe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuuY_ImportExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuuY_ImportExcel.Designer.cs">
+      <DependentUpon>frmLuuY_ImportExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectPhucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectPhucVu.Designer.cs">
+      <DependentUpon>frmSelectPhucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemMatHang.cs">
       <SubType>Form</SubType>
@@ -96,6 +251,12 @@
     </Compile>
     <Compile Include="frmThemMoiNv.Designer.cs">
       <DependentUpon>frmThemMoiNv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_In Project_QLNhahang_not_Project_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_In Project_QLNhahang_not_Project_Login.Designer.cs">
+      <DependentUpon>Login_In Project_QLNhahang_not_Project_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,17 +272,71 @@
     <Compile Include="TongQuan.Designer.cs">
       <DependentUpon>TongQuan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOrder.Designer.cs">
+      <DependentUpon>ucOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_3dot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_3dot.Designer.cs">
+      <DependentUpon>uc_3dot.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoDT.resx">
+      <DependentUpon>frmBaoCaoDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbaocaoMathang.resx">
+      <DependentUpon>frmbaocaoMathang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChitiet.resx">
+      <DependentUpon>frmChitiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChonBan.resx">
+      <DependentUpon>frmChonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatBan.resx">
+      <DependentUpon>frmDatBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDshoadon.resx">
+      <DependentUpon>frmDshoadon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDsmathang.resx">
       <DependentUpon>frmDsmathang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLienHe.resx">
+      <DependentUpon>frmLienHe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuuY_ImportExcel.resx">
+      <DependentUpon>frmLuuY_ImportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectPhucVu.resx">
+      <DependentUpon>frmSelectPhucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemMatHang.resx">
       <DependentUpon>frmThemMatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemMoiNv.resx">
       <DependentUpon>frmThemMoiNv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_In Project_QLNhahang_not_Project_Login.resx">
+      <DependentUpon>Login_In Project_QLNhahang_not_Project_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,6 +355,16 @@
     <EmbeddedResource Include="TongQuan.resx">
       <DependentUpon>TongQuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucOrder.resx">
+      <DependentUpon>ucOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_3dot.resx">
+      <DependentUpon>uc_3dot.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -234,5 +459,198 @@
   <ItemGroup>
     <None Include="Resources\icons8-import-64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kv_ChagioTraicay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kv_GoiboNguSac.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kv_GoiCuonTaiHeoMamNem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kv_LauReuCuabapBo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kv_MucMotNangChienGion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_BanhHoiHeoquayBanhTrang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_boLucLacKhoaiTaychien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_ComchienaHaiSan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_ComLamGaNuong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_Ngao2coisotTraicay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_NgheuHapThai.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_SuonNuongTayBac.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NemHaiSanHaThanh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tm_CheThapCam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cau-be-uong-nuoc-mam-nam-ngu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hbr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hclo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hno3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hydrochloric-acid-hcl-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perchloric-acid-HClO4-tinh-khiet-gia-re.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sulphuric-acid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinning-room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-etiquette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emerald.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sapphire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-dots.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\biaLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-05-17 0905041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-circle-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellowcircle-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircle-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_Form_QlAlaViet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incoming Call Icon Motion [Free PSD].gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zalo-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phoneGify.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zalo-video-call-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fooddome_118034.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
 </Project>

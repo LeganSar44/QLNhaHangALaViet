@@ -143,7 +143,7 @@
             this.datagridviewDSnv.EnableHeadersVisualStyles = false;
             this.datagridviewDSnv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
             this.datagridviewDSnv.HeaderBackColor = System.Drawing.Color.ForestGreen;
-            this.datagridviewDSnv.HeaderBackColor = System.Drawing.Color.Empty;
+            this.datagridviewDSnv.HeaderBgColor = System.Drawing.Color.Empty;
             this.datagridviewDSnv.HeaderForeColor = System.Drawing.Color.White;
             this.datagridviewDSnv.Location = new System.Drawing.Point(0, 0);
             this.datagridviewDSnv.Name = "datagridviewDSnv";
@@ -287,7 +287,7 @@
             this.btnXoa.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnXoa.IconSize = 25;
             this.btnXoa.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnXoa.IdleBorderRadius = 1;
+            this.btnXoa.IdleBorderRadius = 15;
             this.btnXoa.IdleBorderThickness = 1;
             this.btnXoa.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(96)))), ((int)(((byte)(67)))));
             this.btnXoa.IdleIconLeftImage = null;
@@ -296,7 +296,7 @@
             this.btnXoa.Location = new System.Drawing.Point(99, 752);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnXoa.OnDisabledState.BorderRadius = 1;
+            this.btnXoa.OnDisabledState.BorderRadius = 15;
             this.btnXoa.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnXoa.OnDisabledState.BorderThickness = 1;
             this.btnXoa.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -304,7 +304,7 @@
             this.btnXoa.OnDisabledState.IconLeftImage = null;
             this.btnXoa.OnDisabledState.IconRightImage = null;
             this.btnXoa.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnXoa.onHoverState.BorderRadius = 1;
+            this.btnXoa.onHoverState.BorderRadius = 15;
             this.btnXoa.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnXoa.onHoverState.BorderThickness = 1;
             this.btnXoa.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -312,7 +312,7 @@
             this.btnXoa.onHoverState.IconLeftImage = null;
             this.btnXoa.onHoverState.IconRightImage = null;
             this.btnXoa.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnXoa.OnIdleState.BorderRadius = 1;
+            this.btnXoa.OnIdleState.BorderRadius = 15;
             this.btnXoa.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnXoa.OnIdleState.BorderThickness = 1;
             this.btnXoa.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(96)))), ((int)(((byte)(67)))));
@@ -320,7 +320,7 @@
             this.btnXoa.OnIdleState.IconLeftImage = null;
             this.btnXoa.OnIdleState.IconRightImage = null;
             this.btnXoa.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnXoa.OnPressedState.BorderRadius = 1;
+            this.btnXoa.OnPressedState.BorderRadius = 15;
             this.btnXoa.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnXoa.OnPressedState.BorderThickness = 1;
             this.btnXoa.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));

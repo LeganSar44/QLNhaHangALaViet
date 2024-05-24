@@ -18,8 +18,8 @@
 
 
         private frmHome frmHomeInstance;
-        private frmDsmathang frmDSMatHang;
-        public frmThemMatHang(frmHome frmHomeInstance)
+       
+        public frmThemMatHang(frmHome frmHomeInstance )
             {
                 InitializeComponent();
                 this.frmHomeInstance = frmHomeInstance;
@@ -106,11 +106,10 @@
 
         private void lblBack_Click(object sender, EventArgs e)
             {
-                if (frmHomeInstance != null)
-                {
+               
                 frmHomeInstance.openChildForm(this);
                     this.Close();
-                }
+                
             }
         }
     }

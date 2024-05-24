@@ -9,31 +9,38 @@
         using System.Windows.Forms;
     using System.Data.SqlClient;
     using System.Windows;
+using System.Data.OleDb;
 
-        namespace QLNhaHangALaViet
+namespace QLNhaHangALaViet
         {
             public partial class frmDsmathang : Form
             {
                 private frmHome frmHomeInstance;
                   private frmThemMatHang frmThemMatHangInstance;
-        public frmDsmathang(frmHome frmHomeInstance, frmThemMatHang frmThemMatHangInstance)
+
+        public frmDsmathang(frmHome frmHomeInstance)
                 {
                     InitializeComponent();
                     this.frmHomeInstance = frmHomeInstance;
-            this.frmThemMatHangInstance = frmThemMatHangInstance;
+            frmThemMatHangInstance = new frmThemMatHang(frmHomeInstance);
+
             frmThemMatHangInstance.DataInserted += FrmThemMatHangInstance_DataInserted;
+            
+            
+
         }
+
 
         private void FrmThemMatHangInstance_DataInserted(object sender, EventArgs e)
         {
-            // Load lại dữ liệu khi sự kiện DataInserted được kích hoạt
             LoadData();
         }
 
         private void btnThemMHang_DSmathang_Click(object sender, EventArgs e)
                 {
-                    frmHomeInstance.openChildForm(new frmThemMatHang (frmHomeInstance));
-                }
+            frmThemMatHangInstance = new frmThemMatHang(frmHomeInstance);
+            frmHomeInstance.openChildForm(frmThemMatHangInstance);
+        }
 
 
 
@@ -42,7 +49,7 @@
             string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
             string query = "SELECT imagePath, TenMatHang, MoTa, GiaTaiNhaHang FROM dbo.MatHang";
 
-            string defaultImagePath = "R:\\App_Details\\Visual_Studio\\WorkSpace_C_Sharp\\QLNhaHangALaViet\\Resources\\Default.jpg";
+            string defaultImagePath = "R:\\App_Details\\Visual_Studio\\WorkSpace_C_Sharp\\QLNhaHangALaViet\\Resources\\picture.png";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -90,22 +97,19 @@
             {
                 LoadData();
             }
-
+            
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             string searchString = txtTimKiem.Text.Trim();
 
-            // Kiểm tra xem chuỗi tìm kiếm có rỗng không
             if (string.IsNullOrEmpty(searchString))
             {
-                // Nếu rỗng, xóa toàn bộ dữ liệu hiện có trong DataGridView và gọi lại hàm LoadData()
                 DataGridViewDanhSachMatHang.Rows.Clear();
-                DataGridViewDanhSachMatHang.Columns.Clear(); // Clear previous columns
+                DataGridViewDanhSachMatHang.Columns.Clear(); 
                 LoadData();
             }
             else
             {
-                // Nếu không rỗng, thực hiện truy vấn tìm kiếm
                 string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
                 string query = "SELECT imagePath, TenMatHang, MoTa, GiaTaiNhaHang FROM dbo.MatHang WHERE TenMatHang LIKE @search";
 
@@ -113,7 +117,6 @@
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Thêm tham số cho truy vấn tìm kiếm
                         command.Parameters.AddWithValue("@search", "%" + searchString + "%");
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -121,10 +124,8 @@
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
 
-                            // Xóa toàn bộ dữ liệu hiện có trong DataGridView
                             DataGridViewDanhSachMatHang.Rows.Clear();
                                 
-                            // Thêm dữ liệu tìm kiếm mới vào DataGridView
                             foreach (DataRow row in dataTable.Rows)
                             {
                                 string imagePath = row["imagePath"].ToString();
@@ -143,6 +144,50 @@
             }
         }
 
-       
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+                frmLuuY_ImportExcel frmLuuY_ImportExcel = new frmLuuY_ImportExcel(this);
+            frmLuuY_ImportExcel.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (DataGridViewDanhSachMatHang.SelectedRows.Count > 0)
+            {
+                  
+                    int rowIndex = DataGridViewDanhSachMatHang.SelectedRows[0].Index;
+                    string tenMatHang = DataGridViewDanhSachMatHang.Rows[rowIndex].Cells["TenMatHang"].Value.ToString();
+
+                    // Delete the row from the database
+                    string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
+                    string query = "DELETE FROM dbo.MatHang WHERE TenMatHang = @tenMatHang";
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@tenMatHang", tenMatHang);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Remove the row from the DataGridView
+                    DataGridViewDanhSachMatHang.Rows.RemoveAt(rowIndex);
+                snkDsmh.Show(this, "Xoá mặt hàng thành công!", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
+                    3000, "");
+                
+            }
+            else
+            {
+                snkDsmh.Show(this, "Vui lòng chọn mặt hàng cần xóa!", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error
+                    , 3000,"");
+            }
+        }
     }
 }
