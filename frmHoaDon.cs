@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,8 +21,7 @@ namespace QLNhaHangALaViet
         private PrintPreviewDialog prnPreview;
         private List<DataRow> orderDetails;
 
-        string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;Encrypt=False;";
-
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public frmHoaDon()
         {
             InitializeComponent();

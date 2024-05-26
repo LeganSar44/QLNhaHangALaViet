@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 namespace QLNhaHangALaViet
 {
     public partial class Login_In_Project_QLNhahang_not_Project_Login : Form
     {
 
-        string strcon = @"Data Source=LAPTOP-78LVMDCQ\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=true;";
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         SqlConnection con = null;
         int cnt = 0;
         public Login_In_Project_QLNhahang_not_Project_Login()
@@ -34,7 +35,7 @@ namespace QLNhaHangALaViet
                 return;
             }
 
-            using (SqlConnection con = new SqlConnection(strcon))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 string querry = "SELECT password FROM dbo.[TaiKhoan] WHERE id = @id";

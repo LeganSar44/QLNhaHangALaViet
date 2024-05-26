@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -31,7 +32,7 @@ namespace QLNhaHangALaViet
 
         public void LoadData()
         {
-            string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             string query = "SELECT id,HoTen, VaiTro FROM TaiKhoan";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 namespace QLNhaHangALaViet
 {
     public partial class frmDatBan : Form
@@ -16,8 +17,7 @@ namespace QLNhaHangALaViet
         private string selectedWaiter;
         private ucOrder ucOrder;
 
-        string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;Encrypt=False;";
-        private DataTable dtProductInfo;
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString; private DataTable dtProductInfo;
         public frmDatBan()
         {
             InitializeComponent();

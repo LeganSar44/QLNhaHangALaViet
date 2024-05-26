@@ -1,7 +1,8 @@
 ﻿    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Data;
+using System.Configuration;
+using System.Data;
     using System.Data.SqlClient;
     using System.Drawing;
     using System.Linq;
@@ -65,8 +66,8 @@
                 string hinhAnh = txtDuongDan.Text;
                 string moTa = txtNhapMoTA.Text;
 
-                string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
-                string query = "INSERT INTO MatHang (TenMatHang, LoaiMatHang, GiaTaiNhaHang, GiaVon, Donvi, DanhMuc, Menu, imagePath, MoTa) VALUES (@TenMatHang, @LoaiMatHang, @GiaTaiNhaHang, @GiaVon, @Donvi, @DanhMuc, @Menu, @imagePath, @MoTa)";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            string query = "INSERT INTO MatHang (TenMatHang, LoaiMatHang, GiaTaiNhaHang, GiaVon, Donvi, DanhMuc, Menu, imagePath, MoTa) VALUES (@TenMatHang, @LoaiMatHang, @GiaTaiNhaHang, @GiaVon, @Donvi, @DanhMuc, @Menu, @imagePath, @MoTa)";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

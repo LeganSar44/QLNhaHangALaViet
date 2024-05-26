@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -50,10 +51,9 @@ namespace QLNhaHangALaViet
             string email = txtEmail.Text;
             string soDienThoai = txtSoDienThoai.Text;
             string password = txtMatKhauDangNhap.Text;
-            string vaiTro = DrdChonVaiTro.SelectedItem.ToString(); 
+            string vaiTro = DrdChonVaiTro.SelectedItem.ToString();
 
-            string connectionString = "Data Source=LAPTOP-78LVMDCQ\\SQLEXPRESS;Initial Catalog=QL_ALaViet;Integrated Security=True;";
-
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             string query = "INSERT INTO TaiKhoan (id, HoTen, Email, Sodienthoai, password, VaiTro) VALUES (@id, @hoTen, @Email, @soDienThoai, @password, @vaiTro)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
